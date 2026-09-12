@@ -1,21 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#09484b"/>
-      <stop offset="100%" stop-color="#0d7377"/>
+    <linearGradient id="bgMonogram" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#041f20"/>
+      <stop offset="100%" stop-color="#0a3c3e"/>
+    </linearGradient>
+    <linearGradient id="yGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#0d9488"/>
     </linearGradient>
   </defs>
-  
-  <!-- Rounded background -->
-  <rect width="64" height="64" rx="16" fill="url(#bgGrad)"/>
-  
-  <!-- Financial Analytics Bars -->
-  <rect x="12" y="34" width="8" height="18" rx="2.5" fill="#ffffff" opacity="0.4"/>
-  <rect x="24" y="25" width="8" height="27" rx="2.5" fill="#ffffff" opacity="0.7"/>
-  <rect x="36" y="17" width="8" height="35" rx="2.5" fill="#ffffff" opacity="1.0"/>
-  
-  <!-- Trendline with Arrow -->
-  <path d="M12 36 L24 26 L36 17 L50 10" fill="none" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Arrowhead -->
-  <polygon points="52,9 43,9 47,17" fill="#38bdf8"/>
+  <rect width="64" height="64" rx="14" fill="url(#bgMonogram)" stroke="#115e59" stroke-width="1.5"/>
+  <!-- Modern Geometric "Y" with Dot -->
+  <path d="M16 16 L28 32 L28 48 L36 48 L36 32 L48 16 L38 16 L32 26 L26 16 Z" fill="url(#yGrad)"/>
+  <circle cx="49" cy="45" r="3.5" fill="#38bdf8"/>
 </svg>

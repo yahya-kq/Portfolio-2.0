@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yahya. The Analyst</title>
-<meta name="description" content="Yahya, Financial Analyst specializing in data analysis, Power BI dashboards, financial modeling, and Python automation.">
-<meta name="keywords" content="Financial Analyst, Data Analyst, Power BI, Financial Modeling, DCF, Python, Business Intelligence">
+<title>Home | Yahya. The Analyst</title>
+<meta name="description" content="Yahya — Financial Analyst specializing in financial modeling, Power BI business intelligence dashboards, DCF valuation, and Python automation workflows.">
+<meta name="keywords" content="Financial Analyst, Data Analyst, Business Intelligence, Power BI Dashboards, Financial Modeling, DCF Valuation, Pakistan Tobacco Company Peer DuPont Analysis, Khyber Tobacco Company Financial Report, WealthNest Personal Finance, Python Automation, SQL, Financial Reporting, Variance Analysis">
 <meta name="author" content="Yahya">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0d7377">
@@ -13,19 +13,74 @@
 <meta property="og:site_name" content="Yahya. The Analyst">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yahya.dev/">
-<meta property="og:title" content="Yahya. The Analyst">
-<meta property="og:description" content="Financial Analyst with expertise in data analysis, financial modeling, and business intelligence.">
+<meta property="og:title" content="Yahya. The Analyst — Financial &amp; BI Analyst">
+<meta property="og:description" content="Financial Analyst with expertise in data analytics, financial modeling, Power BI dashboards, and business intelligence.">
 <meta property="og:image" content="https://yahya.dev/assets/images/about-photo.jpg">
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="Yahya. The Analyst">
-<meta property="twitter:description" content="Financial Analyst with expertise in data analysis, financial modeling, and business intelligence.">
-<meta property="twitter:image" content="https://yahya.dev/assets/images/about-photo.jpg">
+<meta property="og:image:alt" content="Yahya - Financial Analyst &amp; BI Specialist">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yahya. The Analyst — Financial &amp; BI Analyst">
+<meta name="twitter:description" content="Financial Analyst with expertise in data analytics, financial modeling, Power BI dashboards, and business intelligence.">
+<meta name="twitter:image" content="https://yahya.dev/assets/images/about-photo.jpg">
+<meta name="twitter:image:alt" content="Yahya - Financial Analyst &amp; BI Specialist">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Yahya","jobTitle":"Financial Analyst","description":"Financial Analyst with expertise in data analysis, business intelligence, and financial modeling.","url":"https://yahya.dev","image":"https://yahya.dev/assets/images/about-photo.jpg","sameAs":["https://github.com/yahya-kq"],"knowsAbout":["Financial Analysis","Data Analytics","Power BI","Python","Financial Modeling","Business Intelligence","DCF Valuation","SQL"],"worksFor":{"@type":"Organization","name":"Independent Consultant"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://yahya.dev/#person",
+      "name": "Yahya",
+      "jobTitle": "Financial Analyst",
+      "description": "Financial Analyst with expertise in data analysis, business intelligence, financial modeling, and Python automation.",
+      "url": "https://yahya.dev",
+      "image": "https://yahya.dev/assets/images/about-photo.jpg",
+      "sameAs": ["https://github.com/yahya-kq"],
+      "knowsAbout": ["Financial Analysis", "Data Analytics", "Power BI", "Python", "Financial Modeling", "Business Intelligence", "DCF Valuation", "SQL", "DuPont Analysis", "Corporate Finance"],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Bachelor of Accounting & Finance"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent Consultant"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yahya.dev/#website",
+      "url": "https://yahya.dev/",
+      "name": "Yahya. The Analyst",
+      "description": "Portfolio of Yahya — Financial Analyst & Data Intelligence Specialist.",
+      "publisher": {
+        "@id": "https://yahya.dev/#person"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://yahya.dev/#webpage",
+      "url": "https://yahya.dev/",
+      "name": "Home | Yahya. The Analyst",
+      "isPartOf": {
+        "@id": "https://yahya.dev/#website"
+      },
+      "about": {
+        "@id": "https://yahya.dev/#person"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://yahya.dev/assets/images/about-photo.jpg"
+      }
+    }
+  ]
+}
+</script>
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-<link rel="alternate icon" href="favicon.ico">
+<link rel="alternate icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -69,7 +124,7 @@
         </div>
       </div>
       <div class="hero-photo">
-        <img src="assets/images/profile-photo.jpg" alt="Yahya - Financial Analyst" id="heroProfileImg">
+        <img src="assets/images/profile-photo.jpg" alt="Yahya - Financial Analyst" id="heroProfileImg" fetchpriority="high">
       </div>
     </div>
   </div>
@@ -196,7 +251,7 @@
       <article class="project-card" data-category="dashboard">
         <div class="project-visual">
           <span class="project-tag">Dashboards &amp; BI</span>
-          <img src="assets/images/combat-sports-business-insights.jpg" alt="Combat Sports Business Insights" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/combat-sports-business-insights.jpg" alt="Combat Sports Business Insights" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Sales &amp; Retention Analytics</div>
@@ -209,7 +264,7 @@
       <article class="project-card" data-category="dashboard">
         <div class="project-visual">
           <span class="project-tag">Dashboards &amp; BI</span>
-          <img src="assets/images/google-trends-career-insights.png" alt="Google Trends Career Insights" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/google-trends-career-insights.png" alt="Google Trends Career Insights" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Global Search Intelligence</div>
@@ -222,7 +277,7 @@
       <article class="project-card" data-category="dashboard">
         <div class="project-visual">
           <span class="project-tag">Dashboards &amp; BI</span>
-          <img src="assets/images/workforce-analytics.png" alt="Workforce Analytics" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/workforce-analytics.png" alt="Workforce Analytics" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Workforce Intelligence</div>
@@ -235,7 +290,7 @@
       <article class="project-card" data-category="dashboard">
         <div class="project-visual">
           <span class="project-tag">Dashboards &amp; BI</span>
-          <img src="assets/images/logistics-operations-analysis.png" alt="Logistics Operations Analysis" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/logistics-operations-analysis.png" alt="Logistics Operations Analysis" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Logistics Optimization</div>
@@ -248,7 +303,7 @@
       <article class="project-card" data-category="dashboard">
         <div class="project-visual">
           <span class="project-tag">Dashboards &amp; BI</span>
-          <img src="assets/images/income-statement-insights.png" alt="Income Statement Insights" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/income-statement-insights.png" alt="Income Statement Insights" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Real-Time P&amp;L Reporting</div>
@@ -261,7 +316,7 @@
       <article class="project-card" data-category="dashboard">
         <div class="project-visual">
           <span class="project-tag">Dashboards &amp; BI</span>
-          <img src="assets/images/automobile-companies-analysis.png" alt="Automobile Companies Analysis" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/automobile-companies-analysis.png" alt="Automobile Companies Analysis" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Sales Performance Tracking</div>
@@ -274,7 +329,7 @@
       <article class="project-card" data-category="dashboard">
         <div class="project-visual">
           <span class="project-tag">Dashboards &amp; BI</span>
-          <img src="assets/images/project-performance-analysis.png" alt="Project Performance Analysis" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/project-performance-analysis.png" alt="Project Performance Analysis" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Project Management BI</div>
@@ -287,7 +342,7 @@
       <article class="project-card" data-category="dashboard">
         <div class="project-visual">
           <span class="project-tag">Dashboards &amp; BI</span>
-          <img src="assets/images/personal-finance-insights.png" alt="Personal Finance Insights" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/personal-finance-insights.png" alt="Personal Finance Insights" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Personal Finance Tracking</div>
@@ -301,7 +356,7 @@
       <article class="project-card" data-category="modeling">
         <div class="project-visual">
           <span class="project-tag">Financial Modeling</span>
-          <img src="assets/images/beacon-retail-financial-model.png" alt="Beacon Retail Co. - Integrated 3-Statement Model" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/beacon-retail-financial-model.png" alt="Beacon Retail Co. - Integrated 3-Statement Model" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Integrated Financial Model</div>
@@ -315,7 +370,7 @@
       <article class="project-card" data-category="analysis">
         <div class="project-visual">
           <span class="project-tag">Financial Analysis</span>
-          <img src="assets/images/khyber-tobacco-company.png" alt="Khyber Tobacco Company Limited" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/khyber-tobacco-company.png" alt="Khyber Tobacco Company Limited" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Equity Research &amp; Solvency Analysis</div>
@@ -329,7 +384,7 @@
       <article class="project-card" data-category="web-apps">
         <div class="project-visual">
           <span class="project-tag">Web Apps</span>
-          <img src="assets/images/wealthnest.png" alt="WealthNest - Personal Finance Tracker" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/wealthnest.png" alt="WealthNest - Personal Finance Tracker" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Personal Finance Tracker</div>
@@ -729,12 +784,18 @@ function openGenericReport(title, data) {
   document.getElementById('grPdfBtn').href = data.pdf || '#';
   document.getElementById('grExcelBtn').href = data.excel || '#';
   openReport('generic');
+  document.title = `${title} | Yahya. The Analyst`;
 }
 function openReport(id) {
   const el = document.getElementById('report-' + id);
   if (el) {
     el.classList.add('open');
     document.body.style.overflow = 'hidden';
+    if (id === 'khyber') {
+      document.title = 'Khyber Tobacco Company Limited | Yahya. The Analyst';
+    } else if (id === 'wealthnest') {
+      document.title = 'WealthNest | Yahya. The Analyst';
+    }
   }
 }
 function closeReport(id) {
@@ -742,15 +803,18 @@ function closeReport(id) {
   if (el) {
     el.classList.remove('open');
     document.body.style.overflow = '';
+    document.title = sectionTitles[currentSection] || 'Home | Yahya. The Analyst';
   }
 }
 function openCredentials() {
   document.getElementById('credOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.title = 'Credentials | Yahya. The Analyst';
 }
 function closeCredentials() {
   document.getElementById('credOverlay').classList.remove('open');
   document.body.style.overflow = '';
+  document.title = sectionTitles[currentSection] || 'Home | Yahya. The Analyst';
 }
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
@@ -766,20 +830,68 @@ function showToast() {
   setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
-// Active nav on scroll
-const sections = ['home','about','education','toolkit','projects','contact'];
+// Dynamic section title & active navigation tracking
+const sectionTitles = {
+  home: 'Home | Yahya. The Analyst',
+  about: 'About | Yahya. The Analyst',
+  education: 'Education | Yahya. The Analyst',
+  experience: 'Experience | Yahya. The Analyst',
+  toolkit: 'Toolkit | Yahya. The Analyst',
+  projects: 'Projects | Yahya. The Analyst',
+  contact: 'Contact | Yahya. The Analyst'
+};
+
+let currentSection = 'home';
+
+const sections = ['home', 'about', 'education', 'experience', 'toolkit', 'projects', 'contact'];
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
+      currentSection = entry.target.id;
       document.querySelectorAll('.nav-link').forEach(l => {
         l.classList.toggle('active', l.dataset.section === entry.target.id);
       });
+      if (!document.querySelector('.report-overlay.open') && !document.querySelector('.cs-overlay.open') && !document.querySelector('#credOverlay.open')) {
+        document.title = sectionTitles[entry.target.id] || 'Home | Yahya. The Analyst';
+      }
     }
   });
 }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+
 sections.forEach(id => {
   const el = document.getElementById(id);
   if (el) observer.observe(el);
+});
+
+// Smooth instant section jumps without unsightly #home URLs
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href').slice(1);
+    if (!targetId) return;
+    const target = document.getElementById(targetId);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView();
+      currentSection = targetId;
+      document.title = sectionTitles[targetId] || 'Home | Yahya. The Analyst';
+      if (targetId === 'home') {
+        history.replaceState(null, '', window.location.pathname);
+      } else {
+        history.replaceState(null, '', '#' + targetId);
+      }
+    }
+  });
+});
+
+// Initialize title based on current location hash or default
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.slice(1);
+  if (hash && sectionTitles[hash]) {
+    currentSection = hash;
+    document.title = sectionTitles[hash];
+  } else {
+    document.title = 'Home | Yahya. The Analyst';
+  }
 });
 
 // Header shadow on scroll
