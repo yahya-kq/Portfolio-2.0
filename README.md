@@ -1,4 +1,4 @@
-# Yahya — Financial Analyst & Business Intelligence Portfolio
+# Yahya. The Analyst — Financial & BI Portfolio
 
 Professional portfolio showcasing projects in financial modeling, equity analysis, and business intelligence reporting.
 

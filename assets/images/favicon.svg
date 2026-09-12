@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09484b"/>
+      <stop offset="100%" stop-color="#0d7377"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded background -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)"/>
+  
+  <!-- Financial Analytics Bars -->
+  <rect x="12" y="34" width="8" height="18" rx="2.5" fill="#ffffff" opacity="0.4"/>
+  <rect x="24" y="25" width="8" height="27" rx="2.5" fill="#ffffff" opacity="0.7"/>
+  <rect x="36" y="17" width="8" height="35" rx="2.5" fill="#ffffff" opacity="1.0"/>
+  
+  <!-- Trendline with Arrow -->
+  <path d="M12 36 L24 26 L36 17 L50 10" fill="none" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrowhead -->
+  <polygon points="52,9 43,9 47,17" fill="#38bdf8"/>
+</svg>
