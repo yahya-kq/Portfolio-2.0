@@ -81,7 +81,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
 <link rel="shortcut icon" href="favicon.ico">
-<link rel="stylesheet" href="assets/css/style.css?v=2.0.4">
+<link rel="stylesheet" href="assets/css/style.css?v=2.0.5">
 <style>
 /* Hero Picture Subtle Hover Zoom & Glow */
 .hero-photo{transition:transform .4s cubic-bezier(0.4,0,0.2,1),box-shadow .4s cubic-bezier(0.4,0,0.2,1),border-color .4s cubic-bezier(0.4,0,0.2,1);cursor:pointer}
@@ -121,6 +121,29 @@
   .contact-details-row{grid-template-columns:1fr;max-width:420px;gap:1.25rem}
   .contact-detail{padding:1.85rem 1.25rem 1.75rem}
   .contact-detail-text a{font-size:0.88rem}
+}
+
+/* Experience Section Redesign */
+.exp-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:2.25rem 2.25rem 2rem;box-shadow:0 4px 20px rgba(0,0,0,0.03);transition:transform .35s cubic-bezier(0.4,0,0.2,1),box-shadow .35s cubic-bezier(0.4,0,0.2,1),border-color .35s cubic-bezier(0.4,0,0.2,1)}
+.exp-card:hover{transform:translateY(-3px);border-color:rgba(13,115,119,0.25);box-shadow:0 14px 35px rgba(0,0,0,0.06),0 0 22px rgba(13,115,119,0.12)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem}
+.exp-header-left{display:flex;align-items:center;gap:1rem}
+.exp-logo{width:50px;height:50px;border-radius:12px;border:1px solid var(--border);background:#ffffff;padding:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.04);overflow:hidden}
+.exp-logo img{width:100%;height:100%;object-fit:contain;border-radius:9px;display:block}
+.exp-title-block h3{font-size:1.25rem;font-weight:700;color:var(--text);line-height:1.25;margin:0 0 0.25rem}
+.exp-company{font-size:0.95rem;font-weight:600;color:var(--accent);display:block}
+.exp-date{padding:0.4rem 1rem;border-radius:100px;font-size:0.8rem;font-weight:500;background:var(--bg);border:1px solid var(--border);color:var(--text-secondary);white-space:nowrap}
+.exp-summary{font-size:0.92rem;color:var(--text-secondary);line-height:1.6;margin:1.35rem 0 1.6rem}
+.exp-achieve-heading{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text);margin-bottom:1.2rem}
+.exp-achieve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.35rem 2.25rem}
+.exp-achieve-item{display:flex;align-items:flex-start;gap:0.75rem}
+.exp-check-icon{width:18px;height:18px;flex-shrink:0;margin-top:2px}
+.exp-achieve-item p{font-size:0.88rem;line-height:1.55;color:var(--text-secondary);margin:0}
+@media(max-width:768px){
+  .exp-card{padding:1.5rem 1.25rem}
+  .exp-achieve-grid{grid-template-columns:1fr;gap:1rem}
+  .exp-header{flex-direction:column;gap:0.85rem}
+  .exp-date{align-self:flex-start}
 }
 
 /* Certifications Modal (Light Theme) */
@@ -267,19 +290,56 @@
       <span class="eyebrow">Experience</span>
       <h2>Where I've worked.</h2>
     </div>
-    <div class="edu-item" style="align-items:flex-start">
-      <div class="edu-icon">&#128188;</div>
-      <div class="edu-content" style="width:100%">
-        <div class="edu-meta">iGATE Technologies, Islamabad &middot; Feb 2025 &ndash; Sep 2025</div>
-        <h3>Finance &amp; BI Analyst</h3>
-        <p style="margin-top:0.5rem">Analyzed sales, revenue, and financial performance through BI reporting, financial modeling, and data analysis to support management reporting and business planning.</p>
-        <p style="margin-top:0.9rem;font-weight:600;color:var(--text);font-size:0.9rem">Key Achievements</p>
-        <ul style="margin-top:0.4rem;padding-left:1.1rem;color:var(--text-secondary);font-size:0.85rem;line-height:1.8">
-          <li>Developed multiple Power BI reports to analyze B2B sales, revenue, financial performance, and business metrics for management reporting and financial decision-making.</li>
-          <li>Conducted monthly, quarterly, and yearly financial trend and variance analyses to assess performance and support budgeting, forecasting, and management reporting.</li>
-          <li>Built monthly financial models, scenario analyses, and Excel reporting templates to support financial planning, data consolidation, and management reporting.</li>
-          <li>Analyzed customer retention, revenue trends, and performance data using Python to identify key revenue drivers, customer patterns, and growth opportunities.</li>
-        </ul>
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-header-left">
+          <div class="exp-logo">
+            <img src="assets/images/igate-logo.jpg" alt="iGATE Technologies" width="50" height="50" loading="lazy">
+          </div>
+          <div class="exp-title-block">
+            <h3>Finance &amp; BI Analyst</h3>
+            <span class="exp-company">iGATE Technologies, Islamabad</span>
+          </div>
+        </div>
+        <span class="exp-date">Feb 2025 &ndash; Sep 2025</span>
+      </div>
+
+      <p class="exp-summary">Analyzed sales, revenue, and financial performance through BI reporting, financial modeling, and data analysis to support management reporting and business planning.</p>
+
+      <div class="exp-achieve-heading">KEY ACHIEVEMENTS</div>
+
+      <div class="exp-achieve-grid">
+        <div class="exp-achieve-item">
+          <svg class="exp-check-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="10" cy="10" r="9" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="M6 10l3 3 5-5" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p>Developed multiple Power BI reports to analyze B2B sales, revenue, financial performance, and business metrics for management reporting and financial decision-making.</p>
+        </div>
+
+        <div class="exp-achieve-item">
+          <svg class="exp-check-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="10" cy="10" r="9" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="M6 10l3 3 5-5" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p>Conducted monthly, quarterly, and yearly financial trend and variance analyses to assess performance and support budgeting, forecasting, and management reporting.</p>
+        </div>
+
+        <div class="exp-achieve-item">
+          <svg class="exp-check-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="10" cy="10" r="9" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="M6 10l3 3 5-5" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p>Built monthly financial models, scenario analyses, and Excel reporting templates to support financial planning, data consolidation, and management reporting.</p>
+        </div>
+
+        <div class="exp-achieve-item">
+          <svg class="exp-check-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="10" cy="10" r="9" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="M6 10l3 3 5-5" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p>Analyzed customer retention, revenue trends, and performance data using Python to identify key revenue drivers, customer patterns, and growth opportunities.</p>
+        </div>
       </div>
     </div>
   </div>
