@@ -69,25 +69,25 @@ p{color:var(--text-secondary);font-size:0.95rem;line-height:1.7}
 .link-btn-ghost{color:var(--accent);border-color:var(--accent);background:transparent}
 .link-btn-ghost:hover,.link-btn-ghost:focus,.link-btn-ghost:active{background:var(--accent);color:#fff !important;border-color:var(--accent)}
 
-/* CREDENTIALS MODAL (REFERENCE SPEC) */
-.cs-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:2000;padding:2rem 1.25rem}
+/* CREDENTIALS MODAL (WEBSITE LIGHT THEME & CARD DESIGN SYSTEM) */
+.cs-overlay{position:fixed;inset:0;background:rgba(10,10,10,0.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:2000;padding:2rem 1.25rem}
 .cs-overlay.open{display:flex}
-.cs-modal{background:#ffffff;border-radius:20px;max-width:580px;width:100%;max-height:88vh;overflow-y:auto;padding:2rem 2.25rem;position:relative;box-shadow:0 25px 60px -15px rgba(0,0,0,0.25),0 10px 25px -5px rgba(0,0,0,0.1);border:1px solid #e2e8f0}
+.cs-modal{background:var(--card-bg);border-radius:18px;max-width:580px;width:100%;max-height:88vh;overflow-y:auto;padding:2.25rem;position:relative;box-shadow:0 24px 70px rgba(0,0,0,0.18),0 4px 20px rgba(0,0,0,0.06);border:1px solid var(--border)}
 .cred-modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.35rem}
-.cred-title-wrap{display:flex;align-items:center;gap:0.55rem;color:#0d7377}
-.cred-title-wrap svg{color:#0d7377;flex-shrink:0}
-.cred-tag{font-size:0.85rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#0d7377}
-.cs-close{position:static;width:34px;height:34px;border-radius:50%;border:none;background:#f1f5f9;font-size:0.9rem;cursor:pointer;color:#475569;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
-.cs-close:hover{background:#e2e8f0;color:#0f172a}
-.cred-subtitle{color:#64748b;font-size:0.92rem;margin:0 0 1.5rem 0;line-height:1.5}
-.cred-list{display:flex;flex-direction:column;gap:0.85rem}
-.cred-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:1.15rem 1.35rem;display:flex;align-items:center;justify-content:space-between;gap:1.25rem;transition:all .2s ease;box-shadow:0 1px 3px rgba(0,0,0,0.02)}
-.cred-card:hover{border-color:rgba(13,115,119,0.4);box-shadow:0 4px 16px rgba(0,0,0,0.05);background:#ffffff}
+.cred-title-wrap{display:flex;align-items:center;gap:0.55rem;color:var(--accent)}
+.cred-title-wrap svg{color:var(--accent);flex-shrink:0}
+.cred-tag{font-size:0.85rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent)}
+.cs-close{position:static;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--bg);font-size:0.95rem;cursor:pointer;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.cs-close:hover{background:var(--dark-btn);color:#ffffff;border-color:var(--dark-btn)}
+.cred-subtitle{color:var(--text-secondary);font-size:0.92rem;margin:0 0 1.5rem 0;line-height:1.5}
+.cred-list{display:flex;flex-direction:column;gap:0.9rem}
+.cred-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:1.15rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1.25rem;transition:all .25s cubic-bezier(0.4,0,0.2,1);box-shadow:0 1px 3px rgba(0,0,0,0.02)}
+.cred-card:hover{border-color:var(--accent);box-shadow:0 6px 20px rgba(13,115,119,0.09);transform:translateY(-1px)}
 .cred-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:0.25rem}
-.cred-issuer{font-size:0.72rem;font-weight:700;color:#0d7377;letter-spacing:0.08em;text-transform:uppercase}
-.cred-title{font-size:1.05rem;font-weight:700;color:#0f172a;margin:0;line-height:1.3}
-.cred-btn{display:inline-flex;align-items:center;gap:0.45rem;padding:0.45rem 1.15rem;border-radius:9999px;border:1.5px solid rgba(13,115,119,0.45);background:transparent;color:#0d7377;font-size:0.84rem;font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:all .2s ease}
-.cred-btn:hover{background:#0d7377;color:#ffffff;border-color:#0d7377;box-shadow:0 4px 12px rgba(13,115,119,0.2)}
+.cred-issuer{font-size:0.72rem;font-weight:700;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase}
+.cred-title{font-size:1.05rem;font-weight:700;color:var(--text);margin:0;line-height:1.3}
+.cred-btn{display:inline-flex;align-items:center;gap:0.45rem;padding:0.45rem 1.15rem;border-radius:100px;border:1.5px solid var(--accent);background:transparent;color:var(--accent);font-size:0.84rem;font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:all .25s cubic-bezier(0.4,0,0.2,1);font-family:inherit}
+.cred-btn:hover{background:var(--accent);color:#ffffff !important;border-color:var(--accent);box-shadow:0 4px 14px rgba(13,115,119,0.25);transform:translateY(-1px)}
 .cred-btn svg{width:13px;height:13px;stroke:currentColor}
 
 /* FULL SCREEN READER MODAL */
