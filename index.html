@@ -81,7 +81,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
 <link rel="shortcut icon" href="favicon.ico">
-<link rel="stylesheet" href="assets/css/style.css?v=2.0.2">
+<link rel="stylesheet" href="assets/css/style.css?v=2.0.3">
 <style>
 /* Hero Picture Subtle Hover Zoom & Glow */
 .hero-photo{transition:transform .4s cubic-bezier(0.4,0,0.2,1),box-shadow .4s cubic-bezier(0.4,0,0.2,1),border-color .4s cubic-bezier(0.4,0,0.2,1);cursor:pointer}
@@ -92,6 +92,16 @@
   .hero-photo:hover img{transform:scale(1.28);transform-origin:center 18%}
   .hero-photo:hover{box-shadow:0 10px 32px rgba(0,0,0,0.14),0 0 24px rgba(13,115,119,0.28)}
 }
+
+/* About Picture Subtle Hover Zoom & Glow (Lighter Version) */
+.about-photo{transition:transform .4s cubic-bezier(0.4,0,0.2,1),box-shadow .4s cubic-bezier(0.4,0,0.2,1),border-color .4s cubic-bezier(0.4,0,0.2,1);cursor:pointer}
+.about-photo img{transition:transform .5s cubic-bezier(0.25,1,0.5,1);transform-origin:center top}
+.about-photo:hover{border-color:rgba(13,115,119,0.25);box-shadow:0 10px 30px rgba(0,0,0,0.06),0 0 20px rgba(13,115,119,0.16);transform:translateY(-2px)}
+.about-photo:hover img{transform:scale(1.03)}
+
+/* Project Cards Subtle Glow Hover (No Zoom) */
+.project-card{transition:transform .35s cubic-bezier(0.4,0,0.2,1),box-shadow .35s cubic-bezier(0.4,0,0.2,1),border-color .35s cubic-bezier(0.4,0,0.2,1)}
+.project-card:hover{transform:translateY(-3px);border-color:rgba(13,115,119,0.25);box-shadow:0 12px 35px rgba(0,0,0,0.06),0 0 22px rgba(13,115,119,0.12)}
 
 /* Certifications Modal (Light Theme) */
 #credOverlay{background:rgba(15,23,42,0.42);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
