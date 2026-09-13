@@ -16,6 +16,9 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .btn-dark{background:var(--dark-btn);color:#fff !important;box-shadow:0 4px 14px rgba(26,26,26,0.18)}
 .btn-dark:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,26,26,0.22);background:#000;color:#fff !important}
 .btn-dark:active,.btn-dark:focus{color:#fff !important}
+.btn-header-cta{background:linear-gradient(135deg,#0d7377,#13979c);color:#fff !important;box-shadow:0 4px 14px rgba(13,115,119,0.25);border:none;font-weight:600}
+.btn-header-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,115,119,0.35);background:linear-gradient(135deg,#0b6367,#0f8589);color:#fff !important}
+.btn-header-cta:active,.btn-header-cta:focus{color:#fff !important;transform:translateY(0)}
 .btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border);font-weight:500}
 .btn-outline:hover{border-color:var(--text);background:rgba(0,0,0,0.02)}
 .btn-accent{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(13,115,119,0.25)}

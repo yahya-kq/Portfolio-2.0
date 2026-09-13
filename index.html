@@ -83,8 +83,13 @@
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg?v=3.1">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png?v=3.1">
 <link rel="shortcut icon" href="favicon.ico?v=3.1">
-<link rel="stylesheet" href="assets/css/style.css?v=2.0.8">
+<link rel="stylesheet" href="assets/css/style.css?v=2.0.9">
 <style>
+/* Header CTA Button */
+.btn-header-cta{background:linear-gradient(135deg,#0d7377,#13979c);color:#fff !important;box-shadow:0 4px 14px rgba(13,115,119,0.25);border:none;font-weight:600;transition:transform .35s cubic-bezier(0.4,0,0.2,1),box-shadow .35s cubic-bezier(0.4,0,0.2,1),background .35s ease}
+.btn-header-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,115,119,0.35);background:linear-gradient(135deg,#0b6367,#0f8589);color:#fff !important}
+.btn-header-cta:active,.btn-header-cta:focus{color:#fff !important;transform:translateY(0)}
+
 /* Hero Buttons Premium Styling & Hover Glow/Zoom */
 .btn-hero-work{background:linear-gradient(135deg,#0d7377,#13979c);color:#ffffff !important;box-shadow:0 4px 15px rgba(13,115,119,0.28);border:none;font-weight:600;transition:transform .35s cubic-bezier(0.4,0,0.2,1),box-shadow .35s cubic-bezier(0.4,0,0.2,1),background .35s ease}
 .btn-hero-work:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 10px 30px rgba(13,115,119,0.42),0 0 24px rgba(13,115,119,0.3);background:linear-gradient(135deg,#0b6367,#0f8589);color:#ffffff !important}
@@ -201,7 +206,7 @@
       <a href="#about" class="nav-link" data-section="about">About</a>
       <a href="#projects" class="nav-link" data-section="projects">Projects</a>
       <a href="#contact" class="nav-link" data-section="contact">Contact</a>
-      <a href="#contact" class="btn btn-dark">Hire Me</a>
+      <a href="#contact" class="btn btn-header-cta">Let's Talk</a>
     </nav>
     <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -212,7 +217,7 @@
     <a href="#about" onclick="toggleMobileMenu()">About</a>
     <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
     <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
-    <a href="#contact" class="btn btn-dark" onclick="toggleMobileMenu()">Hire Me</a>
+    <a href="#contact" class="btn btn-header-cta" onclick="toggleMobileMenu()">Let's Talk</a>
   </nav>
 </header>
 
