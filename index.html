@@ -83,7 +83,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg?v=3.1">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png?v=3.1">
 <link rel="shortcut icon" href="favicon.ico?v=3.1">
-<link rel="stylesheet" href="assets/css/style.css?v=2.0.9">
+<link rel="stylesheet" href="assets/css/style.css?v=2.1.0">
 <style>
 /* Header CTA Button */
 .btn-header-cta{background:linear-gradient(135deg,#0d7377,#13979c);color:#fff !important;box-shadow:0 4px 14px rgba(13,115,119,0.25);border:none;font-weight:600;transition:transform .35s cubic-bezier(0.4,0,0.2,1),box-shadow .35s cubic-bezier(0.4,0,0.2,1),background .35s ease}
@@ -113,6 +113,15 @@
 .about-photo img{transition:transform .5s cubic-bezier(0.25,1,0.5,1);transform-origin:center top}
 .about-photo:hover{border-color:rgba(13,115,119,0.25);box-shadow:0 10px 30px rgba(0,0,0,0.06),0 0 20px rgba(13,115,119,0.16);transform:translateY(-2px)}
 .about-photo:hover img{transform:scale(1.03)}
+
+/* Filter Tabs Styling */
+.filter-tabs{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:2rem}
+.filter-tab{padding:0.55rem 1.15rem;border-radius:100px;border:1.5px solid var(--border);background:var(--card-bg);font-size:0.82rem;font-weight:500;cursor:pointer;transition:transform .25s cubic-bezier(0.4,0,0.2,1),box-shadow .25s cubic-bezier(0.4,0,0.2,1),border-color .25s ease,background .25s ease,color .25s ease;color:var(--text-secondary);font-family:inherit;outline:none}
+.filter-tab:hover{border-color:rgba(13,115,119,0.35);color:var(--accent);background:#ffffff;transform:translateY(-1px);box-shadow:0 4px 12px rgba(13,115,119,0.08)}
+.filter-tab:focus-visible{outline:2px solid rgba(13,115,119,0.4);outline-offset:2px}
+.filter-tab.active{background:linear-gradient(135deg,#0d7377,#13979c);color:#ffffff !important;border-color:transparent;font-weight:600;box-shadow:0 4px 16px rgba(13,115,119,0.3)}
+.filter-tab.active:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(13,115,119,0.4);background:linear-gradient(135deg,#0b6367,#0f8589);color:#ffffff !important}
+.filter-tab:active{transform:translateY(0)}
 
 /* Project Cards Subtle Glow Hover (No Zoom) */
 .project-card{transition:transform .35s cubic-bezier(0.4,0,0.2,1),box-shadow .35s cubic-bezier(0.4,0,0.2,1),border-color .35s cubic-bezier(0.4,0,0.2,1)}
