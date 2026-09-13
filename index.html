@@ -83,8 +83,16 @@
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg?v=3.1">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png?v=3.1">
 <link rel="shortcut icon" href="favicon.ico?v=3.1">
-<link rel="stylesheet" href="assets/css/style.css?v=2.0.7">
+<link rel="stylesheet" href="assets/css/style.css?v=2.0.8">
 <style>
+/* Hero Buttons Premium Styling & Hover Glow/Zoom */
+.btn-hero-work{background:linear-gradient(135deg,#0d7377,#13979c);color:#ffffff !important;box-shadow:0 4px 15px rgba(13,115,119,0.28);border:none;font-weight:600;transition:transform .35s cubic-bezier(0.4,0,0.2,1),box-shadow .35s cubic-bezier(0.4,0,0.2,1),background .35s ease}
+.btn-hero-work:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 10px 30px rgba(13,115,119,0.42),0 0 24px rgba(13,115,119,0.3);background:linear-gradient(135deg,#0b6367,#0f8589);color:#ffffff !important}
+.btn-hero-work:active{transform:translateY(0) scale(1.01)}
+.btn-hero-contact{background:transparent;color:var(--text);border:1.5px solid var(--border);font-weight:600;transition:transform .35s cubic-bezier(0.4,0,0.2,1),box-shadow .35s cubic-bezier(0.4,0,0.2,1),border-color .35s ease,background .35s ease}
+.btn-hero-contact:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 6px 22px rgba(0,0,0,0.05),0 0 18px rgba(13,115,119,0.2);background:rgba(13,115,119,0.03);color:var(--text)}
+.btn-hero-contact:active{transform:translateY(0)}
+
 /* Hero Picture Subtle Hover Zoom & Glow */
 .hero-photo{transition:transform .4s cubic-bezier(0.4,0,0.2,1),box-shadow .4s cubic-bezier(0.4,0,0.2,1),border-color .4s cubic-bezier(0.4,0,0.2,1);cursor:pointer}
 .hero-photo img{transition:transform .5s cubic-bezier(0.25,1,0.5,1);transform-origin:center 20%}
@@ -219,8 +227,8 @@
         <h1>Turning data into <span class="accent-text">decisions that compound.</span></h1>
         <p>I am a Financial Analyst with deep expertise in data analysis and financial analysis. I build financial products and reporting systems for business decisions.</p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-dark">View Projects</a>
-          <a href="#contact" class="btn btn-outline">Get in touch</a>
+          <a href="#projects" class="btn btn-hero-work">My Work</a>
+          <a href="#contact" class="btn btn-hero-contact">Get in Touch</a>
         </div>
       </div>
       <div class="hero-photo">
@@ -242,10 +250,6 @@
         <h1>Financial Analyst with Data Expertise</h1>
         <p>I am Yahya, a Financial Analyst working across financial analysis, data analytics, and business intelligence.</p>
         <p>I build reporting systems, financial products, and data automation workflows to streamline financial processes and turn complex data into clear, reliable information for business decisions. Alongside this, my work involves financial modeling, financial statement analysis, and reporting that supports planning and forecasting, backed by accounting knowledge that keeps the numbers behind any report accurate before they're used for decisions.</p>
-        <div class="flex gap-2 mt-2">
-          <a href="#projects" class="btn btn-dark">See my work</a>
-          <a href="#contact" class="btn btn-outline">Get in touch</a>
-        </div>
       </div>
     </div>
   </div>
