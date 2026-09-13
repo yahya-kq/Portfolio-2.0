@@ -81,8 +81,18 @@
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
 <link rel="shortcut icon" href="favicon.ico">
-<link rel="stylesheet" href="assets/css/style.css?v=2.0.1">
+<link rel="stylesheet" href="assets/css/style.css?v=2.0.2">
 <style>
+/* Hero Picture Subtle Hover Zoom & Glow */
+.hero-photo{transition:transform .4s cubic-bezier(0.4,0,0.2,1),box-shadow .4s cubic-bezier(0.4,0,0.2,1),border-color .4s cubic-bezier(0.4,0,0.2,1);cursor:pointer}
+.hero-photo img{transition:transform .5s cubic-bezier(0.25,1,0.5,1);transform-origin:center 20%}
+.hero-photo:hover{border-color:rgba(13,115,119,0.35);box-shadow:0 14px 40px rgba(0,0,0,0.08),0 0 28px rgba(13,115,119,0.24);transform:translateY(-2px)}
+.hero-photo:hover img{transform:scale(1.05)}
+@media (max-width:900px){
+  .hero-photo:hover img{transform:scale(1.28);transform-origin:center 18%}
+  .hero-photo:hover{box-shadow:0 10px 32px rgba(0,0,0,0.14),0 0 24px rgba(13,115,119,0.28)}
+}
+
 /* Certifications Modal (Light Theme) */
 #credOverlay{background:rgba(15,23,42,0.42);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 #credOverlay .cert-modal{background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:20px;max-width:540px;width:100%;max-height:90vh;overflow-y:auto;padding:1.85rem 2rem;position:relative;box-shadow:0 25px 60px -15px rgba(0,0,0,0.16),0 10px 25px -5px rgba(0,0,0,0.08),0 0 0 1px rgba(0,0,0,0.03);color:var(--text)}
@@ -175,7 +185,7 @@
         <p>I am Yahya, a Financial Analyst working across financial analysis, data analytics, and business intelligence.</p>
         <p>I build reporting systems, financial products, and data automation workflows to streamline financial processes and turn complex data into clear, reliable information for business decisions. Alongside this, my work involves financial modeling, financial statement analysis, and reporting that supports planning and forecasting, backed by accounting knowledge that keeps the numbers behind any report accurate before they're used for decisions.</p>
         <div class="flex gap-2 mt-2">
-          <a href="#projects" class="btn btn-dark">See my work &rarr;</a>
+          <a href="#projects" class="btn btn-dark">See my work</a>
           <a href="#contact" class="btn btn-outline">Get in touch</a>
         </div>
       </div>
