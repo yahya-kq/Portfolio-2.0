@@ -156,7 +156,7 @@ p{color:var(--text-secondary);font-size:0.95rem;line-height:1.7}
 .edu-content .edu-meta{font-size:0.8rem;color:var(--accent);font-weight:600;margin-bottom:0.3rem}
 .edu-content p{font-size:0.85rem;color:var(--text-secondary)}
 .exp-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:2.25rem 2.25rem 2rem;box-shadow:0 4px 20px rgba(0,0,0,0.03);transition:all .25s}
-.exp-card:hover{border-color:var(--accent);box-shadow:0 4px 20px rgba(13,115,119,0.08)}
+.exp-card:hover{border-color:rgba(13,115,119,0.35);box-shadow:0 4px 16px rgba(0,0,0,0.04)}
 .exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem}
 .exp-header-left{display:flex;align-items:center;gap:1rem}
 .exp-logo{width:50px;height:50px;border-radius:12px;border:1px solid var(--border);background:#ffffff;padding:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.04);overflow:hidden}
@@ -172,7 +172,7 @@ p{color:var(--text-secondary);font-size:0.95rem;line-height:1.7}
 .exp-achieve-item p{font-size:0.88rem;line-height:1.55;color:var(--text-secondary);margin:0}
 @media(max-width:768px){.exp-card{padding:1.5rem 1.25rem}.exp-achieve-grid{grid-template-columns:1fr;gap:1rem}.exp-header{flex-direction:column;gap:0.85rem}.exp-date{align-self:flex-start}}
 .tool-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;transition:all .25s}
-.tool-card:hover{border-color:var(--accent);box-shadow:0 4px 20px rgba(13,115,119,0.08)}
+.tool-card:hover{border-color:rgba(13,115,119,0.35);box-shadow:0 4px 16px rgba(0,0,0,0.04)}
 .tool-card .tool-label{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-secondary);margin-bottom:0.5rem;font-weight:600}
 .tool-card .tool-value{font-size:0.88rem;font-weight:600;color:var(--text);line-height:1.4}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
@@ -181,7 +181,7 @@ p{color:var(--text-secondary);font-size:0.95rem;line-height:1.7}
 .contact-single{max-width:980px;margin:0 auto}
 .contact-details-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:960px;margin:0 auto}
 .contact-detail{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:2.25rem 1.25rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.03);transition:all .25s;margin-bottom:0}
-.contact-detail:hover{border-color:var(--accent);box-shadow:0 4px 20px rgba(13,115,119,0.08)}
+.contact-detail:hover{border-color:rgba(13,115,119,0.35);box-shadow:0 4px 16px rgba(0,0,0,0.04)}
 .contact-detail-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;flex-shrink:0;margin-bottom:1.1rem}
 .contact-icon-email{background:#e8f4f4;color:var(--accent)}
 .contact-icon-location{background:#ffeef0;color:#e11d48}
