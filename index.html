@@ -83,7 +83,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg?v=3.1">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png?v=3.1">
 <link rel="shortcut icon" href="favicon.ico?v=3.1">
-<link rel="stylesheet" href="assets/css/style.css?v=2.1.1">
+<link rel="stylesheet" href="assets/css/style.css?v=2.1.8">
 <style>
 /* Hero Buttons Premium Styling & Hover Glow/Zoom */
 .btn-hero-work{background:linear-gradient(135deg,#0d7377,#13979c);color:#ffffff !important;box-shadow:0 4px 15px rgba(13,115,119,0.28);border:none;font-weight:600;transition:transform .35s cubic-bezier(0.4,0,0.2,1),box-shadow .35s cubic-bezier(0.4,0,0.2,1),background .35s ease}
@@ -93,21 +93,20 @@
 .btn-hero-contact:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 6px 22px rgba(0,0,0,0.05),0 0 18px rgba(13,115,119,0.2);background:rgba(13,115,119,0.03);color:var(--text)}
 .btn-hero-contact:active{transform:translateY(0)}
 
-/* Hero Picture Subtle Hover Zoom & Glow */
-.hero-photo{transition:transform .4s cubic-bezier(0.4,0,0.2,1),box-shadow .4s cubic-bezier(0.4,0,0.2,1),border-color .4s cubic-bezier(0.4,0,0.2,1);cursor:pointer}
-.hero-photo img{transition:transform .5s cubic-bezier(0.25,1,0.5,1);transform-origin:center 20%}
-.hero-photo:hover{border-color:rgba(13,115,119,0.35);box-shadow:0 14px 40px rgba(0,0,0,0.08),0 0 28px rgba(13,115,119,0.24);transform:translateY(-2px)}
-.hero-photo:hover img{transform:scale(1.05)}
+/* Hero Picture Seamless Blend & Shorter Frame */
+.hero-photo{border:none;background:radial-gradient(circle at 15% 85%, rgba(13,115,119,0.08) 0%, rgba(13,115,119,0.02) 45%, transparent 65%);box-shadow:none;transition:transform .4s cubic-bezier(0.4,0,0.2,1);cursor:pointer}
+.hero-photo img{mix-blend-mode:multiply;object-position:center top;filter:brightness(1.07) contrast(1.02);transition:transform .5s cubic-bezier(0.25,1,0.5,1);transform-origin:center 20%}
+.hero-photo:hover{transform:translateY(-2px)}
+.hero-photo:hover img{transform:scale(1.03)}
 @media (max-width:900px){
-  .hero-photo:hover img{transform:scale(1.28);transform-origin:center 18%}
-  .hero-photo:hover{box-shadow:0 10px 32px rgba(0,0,0,0.14),0 0 24px rgba(13,115,119,0.28)}
+  .hero-photo:hover img{transform:scale(1.10);transform-origin:center top}
 }
 
-/* About Picture Subtle Hover Zoom & Glow (Lighter Version) */
+/* About Picture Subtle Hover Zoom & Glow (Circular Desktop Version) */
 .about-photo{transition:transform .4s cubic-bezier(0.4,0,0.2,1),box-shadow .4s cubic-bezier(0.4,0,0.2,1),border-color .4s cubic-bezier(0.4,0,0.2,1);cursor:pointer}
 .about-photo img{transition:transform .5s cubic-bezier(0.25,1,0.5,1);transform-origin:center top}
-.about-photo:hover{border-color:rgba(13,115,119,0.25);box-shadow:0 10px 30px rgba(0,0,0,0.06),0 0 20px rgba(13,115,119,0.16);transform:translateY(-2px)}
-.about-photo:hover img{transform:scale(1.03)}
+.about-photo:hover{border-color:#ffffff;box-shadow:0 0 25px rgba(13,115,119,0.20),0 0 50px rgba(13,115,119,0.10);transform:translateY(-2px)}
+.about-photo:hover img{transform:scale(1.11)}
 
 /* Filter Tabs Styling */
 .filter-tabs{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:2rem}
@@ -239,7 +238,7 @@
         </div>
       </div>
       <div class="hero-photo">
-        <img src="assets/images/profile-photo.jpg" alt="Yahya - Financial Analyst" id="heroProfileImg" fetchpriority="high">
+        <img src="assets/images/about-photo.jpg" alt="Yahya - Financial Analyst" id="heroProfileImg" fetchpriority="high">
       </div>
     </div>
   </div>
@@ -1066,10 +1065,41 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Header shadow on scroll
+// Smart Auto-Hiding Header (Hides on scroll-down; reveals on scroll-up or scroll-pause)
+let lastScrollY = window.scrollY;
+let scrollPauseTimeout = null;
+const headerEl = document.getElementById('header');
+
 window.addEventListener('scroll', () => {
-  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
-});
+  const currentScrollY = window.scrollY;
+  headerEl.classList.toggle('scrolled', currentScrollY > 20);
+
+  // If mobile menu is open, keep header visible
+  const mobileNav = document.getElementById('mobileNav');
+  if (mobileNav && mobileNav.classList.contains('open')) {
+    headerEl.classList.remove('header--hidden');
+    return;
+  }
+
+  // Always show at top of page
+  if (currentScrollY <= 50) {
+    headerEl.classList.remove('header--hidden');
+  } else if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 6) {
+    // Scrolling DOWN -> hide header
+    headerEl.classList.add('header--hidden');
+  } else if (currentScrollY < lastScrollY) {
+    // Scrolling UP -> reveal header immediately
+    headerEl.classList.remove('header--hidden');
+  }
+
+  lastScrollY = currentScrollY;
+
+  // When scrolling pauses or stops, reveal header
+  clearTimeout(scrollPauseTimeout);
+  scrollPauseTimeout = setTimeout(() => {
+    headerEl.classList.remove('header--hidden');
+  }, 250);
+}, { passive: true });
 
 // Close mobile nav on resize
 window.addEventListener('resize', () => {
