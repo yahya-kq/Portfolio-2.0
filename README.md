@@ -1,4 +1,4 @@
-# Yahya. The Analyst — Financial & BI Portfolio
+# Yahya. The Analyst
 
 Professional portfolio showcasing projects in financial modeling, equity analysis, and business intelligence reporting.
 
@@ -8,6 +8,10 @@ Professional portfolio showcasing projects in financial modeling, equity analysi
 - **Financial Modeling**: Integrated three-statement financial models with dynamic forecasting schedules, debt amortization, and capital expenditure planning.
 - **Financial Analysis**: Comprehensive corporate financial evaluations, solvency risk diagnostics, and DuPont peer benchmarking.
 - **Web Applications**: Modern web-based financial tools with real-time calculations and interactive analytics.
+- **Quantitative Finance**: Monte Carlo simulations, quantitative modeling, and risk analysis.
+- **Valuation**: DCF valuation, comparable company analysis, and financial valuation models.
+- **Data Automation**: Automated financial reporting, data processing, and analytical workflows.
+
 
 ## Technical Toolkit
 
