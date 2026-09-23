@@ -534,12 +534,12 @@
       <article class="project-card" data-category="quant web-application">
         <div class="project-visual">
           <span class="project-tag">Quantitative Finance</span>
-          <img src="assets/images/monte-carlo-risk-simulator.png" alt="Monte Carlo Risk Simulator" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/monte-carlo-risk-simulator.png?v=2.1" alt="Monte Carlo Risk Simulator" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
-          <div class="project-impact">Portfolio Risk &amp; Stochastic Modeling</div>
+          <div class="project-impact">Portfolio Risk &amp; Quantitative Modeling</div>
           <h3>Monte Carlo Risk Simulator</h3>
-          <p>Institutional risk workstation simulating multi-asset equity portfolios across US and Pakistan markets. Models thousands of stochastic price trajectories via correlated Geometric Brownian Motion to compute Value at Risk (VaR) and Conditional Value at Risk (CVaR) under volatile market conditions.</p>
+          <p>Institutional risk workstation simulating multi-asset equity portfolios across US and Pakistan markets. Models thousands of simulated price trajectories via correlated Geometric Brownian Motion to compute Value at Risk (VaR) and Conditional Value at Risk (CVaR) under volatile market conditions.</p>
           <button type="button" onclick="openReport('montecarlo')" class="link-btn link-btn-ghost" style="cursor:pointer;font-family:inherit">More Details</button>
         </div>
       </article>
@@ -827,7 +827,7 @@
   <div class="report-modal">
     <button class="report-close" onclick="closeReport('montecarlo')" aria-label="Close">&#10005;</button>
     <div class="report-header">
-      <span class="eyebrow">Quantitative Finance &middot; Stochastic Risk Analysis</span>
+      <span class="eyebrow">Quantitative Finance &middot; Risk Analysis &amp; Modeling</span>
       <h1>Monte Carlo Risk Simulator</h1>
       <div class="report-meta">
         <span><strong>Coverage:</strong> US Equities (USD) &amp; PSX (PKR)</span>
@@ -847,7 +847,7 @@
       <p>This workstation operates strictly as a downside risk modeling platform. It measures capital exposure, tail loss boundaries, and drawdown probabilities under extreme market scenarios. The simulation does not predict future stock prices or forecast investment returns; its mandate is to provide portfolio managers and risk officers with verifiable metrics of potential monetary loss at defined confidence thresholds.</p>
 
       <h2>Control Panel &amp; Parameter Configuration</h2>
-      <p>The parameter sidebar provides complete institutional control over asset selection and stochastic engine settings:</p>
+      <p>The parameter sidebar provides complete institutional control over asset selection and simulation engine settings:</p>
       <ul>
         <li><strong>Market Universes:</strong> Dynamic toggle between United States Equities (denominated in USD, 252-day annual trading calendar) and Pakistan Stock Exchange (denominated in PKR, 250-day annual trading calendar). Switching markets updates the ticker registry and covariance matrix in real time.</li>
         <li><strong>Asset Universe:</strong> Ten liquid blue-chip equities per market. Users can select any combination of assets across banking, technology, energy, and industrial sectors.</li>
@@ -859,14 +859,14 @@
       <h2>Analytical Workstation Modules</h2>
       <p>The analytical interface evaluates risk profiles across four specialized modules:</p>
       <ul>
-        <li><strong>Loss Distribution &amp; Tail Risk:</strong> Empirical return histogram fitted against parametric normal distributions. Color-coded risk zones isolate Value at Risk thresholds and the Conditional Value at Risk average loss zone. Includes cumulative distribution functions (CDF) and empirical higher moments (skewness, excess kurtosis, Jarque-Bera normality tests).</li>
+        <li><strong>Loss Distribution &amp; Tail Risk:</strong> Empirical return histogram fitted against parametric normal distributions. Color coded risk zones isolate Value at Risk thresholds and the Conditional Value at Risk average loss zone. Includes cumulative distribution functions (CDF) and empirical higher moments (skewness, excess kurtosis, Jarque-Bera normality tests).</li>
         <li><strong>Asset Trajectories &amp; Spatial Manifold:</strong> Multi-line fan charts tracking wealth trajectories across 5th, 25th, median (50th), 75th, and 95th percentile confidence bands. Hardware-accelerated Three.js surface canvas renders simulated trajectories in an interactive 3D spatial manifold alongside pairwise Pearson correlation heatmaps.</li>
         <li><strong>Multi-Portfolio Scenario Comparison:</strong> Side-by-side benchmarking of active allocations against Aggressive Growth, Balanced Core, and Capital Preservation institutional profiles, supported by comparative risk scorecards and risk-versus-return frontier plots.</li>
-        <li><strong>Model Lineage &amp; Mathematical Specification:</strong> Complete transparency into stochastic differential equations, data feed origin timestamps, and underlying assumptions regarding covariance stationarity.</li>
+        <li><strong>Model Lineage &amp; Mathematical Specification:</strong> Complete transparency into mathematical differential equations, data feed origin timestamps, and underlying assumptions regarding covariance stationarity.</li>
       </ul>
 
       <h2>Mathematical Framework &amp; Simulation Mechanics</h2>
-      <p>The stochastic engine models asset dynamics using multi-asset Geometric Brownian Motion coupled through Cholesky factorization:</p>
+      <p>The simulation engine models asset dynamics using multi-asset Geometric Brownian Motion coupled through Cholesky factorization:</p>
       <ul>
         <li><strong>Log Returns &amp; Covariance Structure:</strong> Computes daily continuous log returns r<sub>i,t</sub> = ln(P<sub>i,t</sub> / P<sub>i,t-1</sub>) across historical price series to construct the asset mean vector (&mu;) and sample covariance matrix (&Sigma;).</li>
         <li><strong>Cholesky Factorization:</strong> Factors the positive semi-definite covariance matrix into &Sigma; = L &middot; L<sup>T</sup>, where L is a lower triangular matrix. Correlated shocks are generated via &epsilon; = L &middot; Z, where Z represents independent standard normal random variates, preserving the exact empirical correlation matrix.</li>
