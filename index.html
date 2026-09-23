@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home | Yahya. The Analyst</title>
 <meta name="description" content="Yahya — Financial Analyst specializing in financial modeling, Power BI business intelligence dashboards, DCF valuation, and Python automation workflows.">
-<meta name="keywords" content="Financial Analyst, Data Analyst, Business Intelligence, Power BI Dashboards, Financial Modeling, DCF Valuation, Pakistan Tobacco Company Peer DuPont Analysis, Khyber Tobacco Company Financial Report, WealthNest Personal Finance, Python Automation, SQL, Financial Reporting, Variance Analysis">
+<meta name="keywords" content="Financial Analyst, Quantitative Finance, Monte Carlo Risk Simulator, Value at Risk, CVaR, Data Analyst, Business Intelligence, Power BI Dashboards, Financial Modeling, DCF Valuation, Pakistan Tobacco Company Peer DuPont Analysis, Khyber Tobacco Company Financial Report, WealthNest Personal Finance, Python Automation, SQL, Financial Reporting, Variance Analysis">
 <meta name="author" content="Yahya">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0d7377">
@@ -392,6 +392,7 @@
       <button class="filter-tab" onclick="filterProjects('dashboard',this)">Dashboards &amp; BI</button>
       <button class="filter-tab" onclick="filterProjects('modeling',this)">Financial Modeling</button>
       <button class="filter-tab" onclick="filterProjects('analysis',this)">Financial Analysis</button>
+      <button class="filter-tab" onclick="filterProjects('quant',this)">Quantitative Finance</button>
       <button class="filter-tab" onclick="filterProjects('web-application',this)">Web Application</button>
     </div>
     <div class="grid-3" id="projectsGrid">
@@ -400,7 +401,7 @@
       <article class="project-card" data-category="dashboard">
         <div class="project-visual">
           <span class="project-tag">Dashboards &amp; BI</span>
-          <img src="assets/images/combat-sports-business-insights.jpg" alt="Combat Sports Business Insights" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/combat-sports-business-insights.jpg" alt="Combat Sports Business Insights" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Sales &amp; Retention Analytics</div>
@@ -413,7 +414,7 @@
       <article class="project-card" data-category="dashboard">
         <div class="project-visual">
           <span class="project-tag">Dashboards &amp; BI</span>
-          <img src="assets/images/google-trends-career-insights.png" alt="Google Trends Career Insights" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/google-trends-career-insights.png" alt="Google Trends Career Insights" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Global Search Intelligence</div>
@@ -426,7 +427,7 @@
       <article class="project-card" data-category="dashboard">
         <div class="project-visual">
           <span class="project-tag">Dashboards &amp; BI</span>
-          <img src="assets/images/workforce-analytics.png" alt="Workforce Analytics" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
+          <img src="assets/images/workforce-analytics.png" alt="Workforce Analytics" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
         </div>
         <div class="project-body">
           <div class="project-impact">Workforce Intelligence</div>
@@ -529,6 +530,20 @@
         </div>
       </article>
 
+      <!-- Quantitative Finance -->
+      <article class="project-card" data-category="quant web-application">
+        <div class="project-visual">
+          <span class="project-tag">Quantitative Finance</span>
+          <img src="assets/images/monte-carlo-risk-simulator.png" alt="Monte Carlo Risk Simulator" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center">
+        </div>
+        <div class="project-body">
+          <div class="project-impact">Portfolio Risk &amp; Stochastic Modeling</div>
+          <h3>Monte Carlo Risk Simulator</h3>
+          <p>Institutional risk workstation simulating multi-asset equity portfolios across US and Pakistan markets. Models thousands of stochastic price trajectories via correlated Geometric Brownian Motion to compute Value at Risk (VaR) and Conditional Value at Risk (CVaR) under volatile market conditions.</p>
+          <button type="button" onclick="openReport('montecarlo')" class="link-btn link-btn-ghost" style="cursor:pointer;font-family:inherit">More Details</button>
+        </div>
+      </article>
+
       <!-- Web Application -->
       <article class="project-card" data-category="web-application">
         <div class="project-visual">
@@ -538,8 +553,8 @@
         <div class="project-body">
           <div class="project-impact">Personal Finance Tracker</div>
           <h3>WealthNest</h3>
-          <p>Browser-based personal finance tracker for managing income, expenses, monthly budgets, and savings goals with interactive Chart.js analytics and secure cloud sync.</p>
-          <button type="button" onclick="openReport('wealthnest')" class="link-btn link-btn-ghost" style="cursor:pointer;font-family:inherit">More Detail</button>
+          <p>Browser-based personal finance tracker for managing income, expenses, monthly budgets, and savings goals with interactive Chart.js analytics and secure cloud sync. Features dual operating modes with local offline storage alongside Supabase authentication and Row Level Security for multi-device data protection.</p>
+          <button type="button" onclick="openReport('wealthnest')" class="link-btn link-btn-ghost" style="cursor:pointer;font-family:inherit">More Details</button>
         </div>
       </article>
 
@@ -808,6 +823,74 @@
   </div>
 </div>
 
+<div class="report-overlay" id="report-montecarlo" onclick="if(event.target===this)closeReport('montecarlo')">
+  <div class="report-modal">
+    <button class="report-close" onclick="closeReport('montecarlo')" aria-label="Close">&#10005;</button>
+    <div class="report-header">
+      <span class="eyebrow">Quantitative Finance &middot; Stochastic Risk Analysis</span>
+      <h1>Monte Carlo Risk Simulator</h1>
+      <div class="report-meta">
+        <span><strong>Coverage:</strong> US Equities (USD) &amp; PSX (PKR)</span>
+        <span><strong>Mathematical Model:</strong> Correlated Geometric Brownian Motion (GBM)</span>
+        <span><strong>Factorization:</strong> Cholesky Decomposition</span>
+        <span><strong>Risk Metrics:</strong> VaR &amp; CVaR (Expected Shortfall)</span>
+        <span><strong>Stack:</strong> Next.js 16, Python FastAPI, NumPy, SciPy, Three.js</span>
+      </div>
+      <div class="report-actions">
+        <a href="https://monte-carlo-risk.vercel.app/" class="btn btn-outline-dark" target="_blank" rel="noopener">&#127922; Run Monte Carlo</a>
+        <a href="https://github.com/yahya-kq/Monte-Carlo" class="btn btn-ghost" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>Get Code</a>
+      </div>
+    </div>
+    <div class="report-body">
+      <h2>Overview &amp; Purpose</h2>
+      <p>Monte Carlo simulation is a mathematical technique used in quantitative finance to model the probability of different outcomes in the presence of random variables. The platform generates thousands of potential future price paths for multi-asset equity portfolios using historical return statistics and empirical covariance structures.</p>
+      <p>This workstation operates strictly as a downside risk modeling platform. It measures capital exposure, tail loss boundaries, and drawdown probabilities under extreme market scenarios. The simulation does not predict future stock prices or forecast investment returns; its mandate is to provide portfolio managers and risk officers with verifiable metrics of potential monetary loss at defined confidence thresholds.</p>
+
+      <h2>Control Panel &amp; Parameter Configuration</h2>
+      <p>The parameter sidebar provides complete institutional control over asset selection and stochastic engine settings:</p>
+      <ul>
+        <li><strong>Market Universes:</strong> Dynamic toggle between United States Equities (denominated in USD, 252-day annual trading calendar) and Pakistan Stock Exchange (denominated in PKR, 250-day annual trading calendar). Switching markets updates the ticker registry and covariance matrix in real time.</li>
+        <li><strong>Asset Universe:</strong> Ten liquid blue-chip equities per market. Users can select any combination of assets across banking, technology, energy, and industrial sectors.</li>
+        <li><strong>Capital &amp; Weight Allocation:</strong> Custom portfolio weights with automated proportional normalization guaranteeing an exact 100% allocation across selected assets. Flexible starting capital inputs (e.g., $100,000 USD or Rs. 10,000,000 PKR).</li>
+        <li><strong>Simulation Scope:</strong> Path counts configurable from 1,000 up to 50,000 iterations for high-precision tail estimation. Forecast horizons from 1 trading day up to 252 trading days (1 full trading year).</li>
+        <li><strong>Confidence Intervals &amp; Auditability:</strong> Risk evaluation selectable at 90%, 95%, and 99% confidence thresholds. Deterministic random seed control enables exact reproducibility for backtesting and compliance verification.</li>
+      </ul>
+
+      <h2>Analytical Workstation Modules</h2>
+      <p>The analytical interface evaluates risk profiles across four specialized modules:</p>
+      <ul>
+        <li><strong>Loss Distribution &amp; Tail Risk:</strong> Empirical return histogram fitted against parametric normal distributions. Color-coded risk zones isolate Value at Risk thresholds and the Conditional Value at Risk average loss zone. Includes cumulative distribution functions (CDF) and empirical higher moments (skewness, excess kurtosis, Jarque-Bera normality tests).</li>
+        <li><strong>Asset Trajectories &amp; Spatial Manifold:</strong> Multi-line fan charts tracking wealth trajectories across 5th, 25th, median (50th), 75th, and 95th percentile confidence bands. Hardware-accelerated Three.js surface canvas renders simulated trajectories in an interactive 3D spatial manifold alongside pairwise Pearson correlation heatmaps.</li>
+        <li><strong>Multi-Portfolio Scenario Comparison:</strong> Side-by-side benchmarking of active allocations against Aggressive Growth, Balanced Core, and Capital Preservation institutional profiles, supported by comparative risk scorecards and risk-versus-return frontier plots.</li>
+        <li><strong>Model Lineage &amp; Mathematical Specification:</strong> Complete transparency into stochastic differential equations, data feed origin timestamps, and underlying assumptions regarding covariance stationarity.</li>
+      </ul>
+
+      <h2>Mathematical Framework &amp; Simulation Mechanics</h2>
+      <p>The stochastic engine models asset dynamics using multi-asset Geometric Brownian Motion coupled through Cholesky factorization:</p>
+      <ul>
+        <li><strong>Log Returns &amp; Covariance Structure:</strong> Computes daily continuous log returns r<sub>i,t</sub> = ln(P<sub>i,t</sub> / P<sub>i,t-1</sub>) across historical price series to construct the asset mean vector (&mu;) and sample covariance matrix (&Sigma;).</li>
+        <li><strong>Cholesky Factorization:</strong> Factors the positive semi-definite covariance matrix into &Sigma; = L &middot; L<sup>T</sup>, where L is a lower triangular matrix. Correlated shocks are generated via &epsilon; = L &middot; Z, where Z represents independent standard normal random variates, preserving the exact empirical correlation matrix.</li>
+        <li><strong>Discrete GBM Formulation:</strong> Trajectories are projected daily using Ito's lemma formulation: S<sub>i</sub>(t + &Delta;t) = S<sub>i</sub>(t) &middot; exp((&mu;<sub>i</sub> - 0.5&sigma;<sub>i</sub><sup>2</sup>)&Delta;t + &sigma;<sub>i</sub>&radic;&Delta;t &middot; &epsilon;<sub>i</sub>), where the -0.5&sigma;<sub>i</sub><sup>2</sup> term prevents compounding upward drift bias.</li>
+        <li><strong>Coherent Tail Risk Measurement:</strong> Evaluates Value at Risk (VaR<sub>&alpha;</sub>) at confidence level &alpha; alongside Conditional Value at Risk (CVaR<sub>&alpha;</sub> = E[Loss | Loss &ge; VaR<sub>&alpha;</sub>]). CVaR measures expected losses beyond the VaR threshold, penalizing tail risk and asymmetric downside distributions.</li>
+      </ul>
+
+      <h2>Data Pipeline &amp; Architectural Engineering</h2>
+      <p>Live adjusted closing prices and trading volume for US equities are ingested through the Yahoo Finance API with automated dividend and stock-split adjustments. Pakistan Stock Exchange records are retrieved from the official PSX Data Portal (DPS) with secondary fallback endpoints. Price histories are serialized in Apache Parquet columnar storage with background cache warming on boot, lowering simulation response times to under 30 milliseconds. If remote services are unreachable, a built-in client-side WebAssembly and TypeScript vector engine computes correlated Cholesky simulations directly within the browser session.</p>
+
+      <h2>Technical Architecture</h2>
+      <table class="report-table">
+        <tr><th>Layer</th><th>Technology</th><th>Role</th></tr>
+        <tr><td>Frontend Framework</td><td>Next.js 16 (App Router), React 19, TypeScript</td><td>High-performance interactive financial dashboard with server and client components</td></tr>
+        <tr><td>Visualizations</td><td>Recharts &amp; Three.js</td><td>Dynamic risk distributions, fan charts, correlation heatmaps, and 3D spatial path rendering</td></tr>
+        <tr><td>Quantitative Backend</td><td>FastAPI &amp; Python 3.12</td><td>High-throughput REST API serving vector calculations and historical price feeds</td></tr>
+        <tr><td>Vector Computation</td><td>NumPy &amp; SciPy</td><td>Cholesky factorization, random matrix generation, and empirical moment extraction</td></tr>
+        <tr><td>Data &amp; Persistence</td><td>Apache Parquet &amp; In-Memory Cache</td><td>Low-latency columnar caching and asynchronous cache warming</td></tr>
+        <tr><td>Deployment</td><td>Vercel</td><td>Edge-optimized global deployment with automated continuous integration</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
 <div class="report-overlay" id="report-generic" onclick="if(event.target===this)closeReport('generic')">
   <div class="report-modal">
     <button class="report-close" onclick="closeReport('generic')" aria-label="Close">&#10005;</button>
@@ -911,11 +994,44 @@
 function toggleMobileMenu() {
   document.getElementById('mobileNav').classList.toggle('open');
 }
+
+// Instant background preloading for all project visuals to eliminate load delay
+const projectImagesToPreload = [
+  'assets/images/monte-carlo-risk-simulator.png',
+  'assets/images/combat-sports-business-insights.jpg',
+  'assets/images/google-trends-career-insights.png',
+  'assets/images/workforce-analytics.png',
+  'assets/images/logistics-operations-analysis.png',
+  'assets/images/income-statement-insights.png',
+  'assets/images/automobile-companies-analysis.png',
+  'assets/images/project-performance-analysis.png',
+  'assets/images/personal-finance-insights.png',
+  'assets/images/beacon-retail-financial-model.png',
+  'assets/images/khyber-tobacco-company.png',
+  'assets/images/wealthnest.png'
+];
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(() => {
+    projectImagesToPreload.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  });
+} else {
+  window.addEventListener('load', () => {
+    projectImagesToPreload.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  });
+}
+
 function filterProjects(category, btn) {
   document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('.project-card').forEach(card => {
-    if (category === 'all' || card.dataset.category === category) {
+    const cats = (card.dataset.category || '').split(' ');
+    if (category === 'all' || cats.includes(category)) {
       card.style.display = 'flex';
       card.style.animation = 'fadeIn 0.3s ease';
     } else {
@@ -968,6 +1084,8 @@ function openReport(id) {
       document.title = 'Khyber Tobacco Company Limited | Yahya. The Analyst';
     } else if (id === 'wealthnest') {
       document.title = 'WealthNest | Yahya. The Analyst';
+    } else if (id === 'montecarlo') {
+      document.title = 'Monte Carlo Risk Simulator | Yahya. The Analyst';
     }
   }
 }
@@ -994,6 +1112,7 @@ document.addEventListener('keydown', (e) => {
     closeCredentials();
     closeReport('khyber');
     closeReport('wealthnest');
+    closeReport('montecarlo');
     closeReport('generic');
   }
 });
