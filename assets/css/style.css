@@ -166,6 +166,7 @@ p{color:var(--text-secondary);font-size:0.95rem;line-height:1.7}
 .edu-content .edu-meta{font-size:0.8rem;color:var(--accent);font-weight:600;margin-bottom:0.3rem}
 .edu-content p{font-size:0.85rem;color:var(--text-secondary)}
 .exp-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:2.25rem 2.25rem 2rem;box-shadow:0 4px 20px rgba(0,0,0,0.03);transition:all .25s}
+.exp-card + .exp-card{margin-top:1.75rem}
 .exp-card:hover{border-color:rgba(13,115,119,0.35);box-shadow:0 4px 16px rgba(0,0,0,0.04)}
 .exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem}
 .exp-header-left{display:flex;align-items:center;gap:1rem}
