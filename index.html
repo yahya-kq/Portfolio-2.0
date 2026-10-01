@@ -240,7 +240,7 @@
         </div>
       </div>
       <div class="hero-photo">
-        <img src="assets/images/about-photo.jpg?v=3" alt="Yahya - Financial Analyst" id="heroProfileImg" fetchpriority="high">
+        <img src="assets/images/about-photo.jpg?v=4" alt="Yahya - Financial Analyst" id="heroProfileImg" fetchpriority="high">
       </div>
     </div>
   </div>
@@ -1089,9 +1089,31 @@ if ('requestIdleCallback' in window) {
   });
 }
 
-function filterProjects(category, btn) {
-  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
+function getCategoryFromUrl() {
+  const hash = window.location.hash || '';
+  const search = window.location.search || '';
+  const match = hash.match(/category=([^&]+)/) || search.match(/category=([^&]+)/);
+  return match && match[1] ? decodeURIComponent(match[1]) : null;
+}
+
+function filterProjects(category, btn, updateUrl = true) {
+  const tabs = document.querySelectorAll('.filter-tab');
+  tabs.forEach(t => t.classList.remove('active'));
+  if (btn) {
+    btn.classList.add('active');
+  } else {
+    const targetTab = Array.from(tabs).find(t => {
+      const oc = t.getAttribute('onclick') || '';
+      return oc.includes(`'${category}'`);
+    });
+    if (targetTab) {
+      targetTab.classList.add('active');
+    } else if (tabs[0]) {
+      tabs[0].classList.add('active');
+      category = 'all';
+    }
+  }
+
   document.querySelectorAll('.project-card').forEach(card => {
     const cats = (card.dataset.category || '').split(' ');
     if (category === 'all' || cats.includes(category)) {
@@ -1101,6 +1123,14 @@ function filterProjects(category, btn) {
       card.style.display = 'none';
     }
   });
+
+  if (updateUrl) {
+    if (category === 'all') {
+      history.replaceState(null, '', '#projects');
+    } else {
+      history.replaceState(null, '', `#projects?category=${encodeURIComponent(category)}`);
+    }
+  }
 }
 const caseStudyData = {
   "Khyber Tobacco Company Limited": {
@@ -1238,12 +1268,50 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// Initialize title based on current location hash or default
+// Ensure manual scroll restoration so reloads always start at top of home
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+const navEntries = performance.getEntriesByType && performance.getEntriesByType('navigation');
+const isReload = (navEntries && navEntries.length > 0 && navEntries[0].type === 'reload') ||
+                 (performance.navigation && performance.navigation.type === 1);
+
+if (isReload) {
+  if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname);
+  }
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+
+// Initialize title, deep link category, and scroll position
 window.addEventListener('DOMContentLoaded', () => {
-  const hash = window.location.hash.slice(1);
-  if (hash && sectionTitles[hash]) {
-    currentSection = hash;
-    document.title = sectionTitles[hash];
+  if (isReload) {
+    window.scrollTo(0, 0);
+    currentSection = 'home';
+    document.title = sectionTitles.home || 'Home | Yahya. The Analyst';
+    return;
+  }
+
+  const initialCat = getCategoryFromUrl();
+  if (initialCat) {
+    filterProjects(initialCat, null, false);
+  }
+
+  const rawHash = window.location.hash.slice(1);
+  const cleanHash = rawHash.split('?')[0];
+
+  if (cleanHash && sectionTitles[cleanHash]) {
+    currentSection = cleanHash;
+    document.title = sectionTitles[cleanHash];
+    const target = document.getElementById(cleanHash);
+    if (target) {
+      setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 60);
+    }
   } else {
     document.title = 'Home | Yahya. The Analyst';
   }
