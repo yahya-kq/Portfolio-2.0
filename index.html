@@ -83,7 +83,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg?v=3.1">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png?v=3.1">
 <link rel="shortcut icon" href="favicon.ico?v=3.1">
-<link rel="stylesheet" href="assets/css/style.css?v=2.2.6">
+<link rel="stylesheet" href="assets/css/style.css?v=2.2.7">
 <style>
 /* Hero Buttons Premium Styling & Hover Glow/Zoom */
 .btn-hero-work{background:linear-gradient(135deg,#0d7377,#13979c);color:#ffffff !important;box-shadow:0 4px 15px rgba(13,115,119,0.28);border:none;font-weight:600;transition:transform .35s cubic-bezier(0.4,0,0.2,1),box-shadow .35s cubic-bezier(0.4,0,0.2,1),background .35s ease}
@@ -94,13 +94,14 @@
 .btn-hero-contact:active{transform:translateY(0)}
 
 /* Hero Picture Seamless Blend & Shorter Frame */
-.hero-photo{border:none;background:radial-gradient(circle at 85% 85%, rgba(13,115,119,0.06) 0%, rgba(13,115,119,0.015) 45%, transparent 70%);box-shadow:none;transition:transform .4s cubic-bezier(0.4,0,0.2,1);cursor:pointer}
+.hero-photo{border:none;background:radial-gradient(circle at 85% 85%, rgba(13,115,119,0.06) 0%, rgba(13,115,119,0.015) 45%, transparent 70%);box-shadow:none;transition:transform .4s cubic-bezier(0.4,0,0.2,1),box-shadow .4s cubic-bezier(0.4,0,0.2,1),background .4s ease;cursor:pointer}
 .hero-photo img{mix-blend-mode:multiply;object-position:center top;filter:brightness(1.07) contrast(1.02);transition:transform .5s cubic-bezier(0.25,1,0.5,1);transform-origin:center 20%}
-.hero-photo:hover{transform:translateY(-2px);box-shadow:none}
-.hero-photo:hover img{transform:scale(1.02)}
+.hero-photo:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(13,115,119,0.20),0 0 22px rgba(13,115,119,0.14);background:radial-gradient(circle at 85% 85%, rgba(13,115,119,0.10) 0%, rgba(13,115,119,0.03) 50%, transparent 75%)}
+.hero-photo:hover img{transform:scale(1.03)}
 @media (max-width:900px){
   .hero-photo{border:none;border-radius:var(--radius);box-shadow:none;background:radial-gradient(circle at 85% 85%, rgba(13,115,119,0.06) 0%, rgba(13,115,119,0.015) 45%, transparent 70%)}
   .hero-photo img{mix-blend-mode:multiply;transform:none}
+  .hero-photo:hover{box-shadow:none;transform:none}
   .hero-photo:hover img{transform:none}
 }
 
