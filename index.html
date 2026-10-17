@@ -136,24 +136,65 @@
 /* Toolkit Cards Hover */
 .tool-card:hover{border-color:rgba(13,115,119,0.35);box-shadow:0 4px 16px rgba(0,0,0,0.04)}
 
-/* Contact Cards Redesign (Reference Layout) */
+/* Contact Section Redesign (Two-Card Layout with Glow & Mobile Optimization) */
 .contact-single{max-width:980px;margin:0 auto}
-.contact-details-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:960px;margin:0 auto}
-.contact-detail{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:2.25rem 1.25rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.03);transition:all .25s;margin-bottom:0}
-.contact-detail:hover{border-color:rgba(13,115,119,0.35);box-shadow:0 4px 16px rgba(0,0,0,0.04)}
-.contact-detail-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;flex-shrink:0;margin-bottom:1.1rem}
-.contact-icon-email{background:#e8f4f4;color:var(--accent)}
-.contact-icon-location{background:#ffeef0;color:#e11d48}
-.contact-icon-time{background:#fef9ee;color:#d97706}
-.contact-detail-text{display:flex;flex-direction:column;align-items:center;width:100%}
-.contact-detail-text h4{font-size:1.05rem;font-weight:700;margin-bottom:0.35rem;color:var(--text)}
-.contact-detail-text a,.contact-detail-text span{font-size:0.88rem;color:var(--text-secondary);text-decoration:none;transition:color .2s;line-height:1.45;word-break:keep-all}
-.contact-detail-text a{white-space:nowrap;font-size:clamp(0.78rem,1.8vw,0.88rem)}
-.contact-detail-text a:hover{color:var(--accent)}
-@media(max-width:850px){
-  .contact-details-row{grid-template-columns:1fr;max-width:420px;gap:1.25rem}
-  .contact-detail{padding:1.85rem 1.25rem 1.75rem}
-  .contact-detail-text a{font-size:0.88rem}
+.contact-cards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;align-items:stretch}
+.contact-card{background:var(--card-bg);border:1px solid var(--border);border-radius:20px;padding:2rem 2.25rem;box-shadow:0 4px 20px rgba(0,0,0,0.03);display:flex;flex-direction:column;min-width:0;transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
+.contact-card:hover{border-color:rgba(13,115,119,0.3);box-shadow:0 8px 30px rgba(0,0,0,0.05)}
+.contact-card h3{font-size:1.25rem;font-weight:700;color:var(--text);letter-spacing:-0.02em;line-height:1.2;margin:0 0 1.25rem}
+
+/* Email Card */
+.contact-card-email{justify-content:center;background:linear-gradient(140deg,#ffffff 55%,#f4f9f9 100%)}
+.contact-card-email h3{margin-bottom:0.9rem}
+.contact-email-stack{display:flex;flex-direction:column;align-items:flex-start;gap:1.15rem}
+.contact-email-address{display:inline-flex;align-items:center;font-size:0.95rem;font-weight:400;color:var(--text);text-decoration:none;overflow-wrap:anywhere;word-break:break-word;transition:color .2s ease}
+.contact-email-address:hover{color:var(--accent);text-decoration:none}
+.btn-contact-email{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;border-radius:10px;background:var(--accent);color:#ffffff !important;min-height:38px;padding:0.55rem 1.15rem;font-size:0.85rem;font-weight:600;text-decoration:none;box-shadow:0 4px 14px rgba(13,115,119,0.22);transition:background .2s cubic-bezier(0.4,0,0.2,1),transform .2s cubic-bezier(0.4,0,0.2,1),box-shadow .2s cubic-bezier(0.4,0,0.2,1);border:none;cursor:pointer}
+.btn-contact-email:hover{background:#0a5e61;color:#ffffff !important;transform:translateY(-2px);box-shadow:0 8px 22px rgba(13,115,119,0.32)}
+.btn-contact-email:active{transform:translateY(0)}
+
+/* Profiles Card */
+.contact-card-profiles{justify-content:flex-start}
+.contact-profiles-list{display:grid;gap:0.75rem}
+.contact-profile-link{display:flex;align-items:center;gap:0.9rem;min-height:64px;border:1px solid var(--border);background:var(--bg);border-radius:12px;padding:0.75rem 1rem;text-decoration:none;color:inherit;transition:all .25s cubic-bezier(0.4,0,0.2,1)}
+.contact-profile-link:hover{background:#ffffff;border-color:rgba(13,115,119,0.35);transform:translateY(-2px);box-shadow:0 6px 20px rgba(13,115,119,0.12),0 0 16px rgba(13,115,119,0.08)}
+.contact-brand-icon{width:26px;height:26px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-brand-icon svg{display:block;width:22px;height:22px}
+.contact-brand-linkedin svg{fill:#0A66C2}
+.contact-brand-github svg{fill:#181717}
+.contact-link-copy{display:flex;flex-direction:column;gap:0.2rem;min-width:0;flex:1}
+.contact-link-label{font-size:0.92rem;font-weight:650;color:var(--text);line-height:1.2}
+.contact-link-detail{font-size:0.78rem;color:var(--text-secondary);line-height:1.3}
+.contact-arrow-icon{width:16px;height:16px;margin-left:auto;flex-shrink:0;stroke:#9ca3af;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s ease,transform .2s ease}
+.contact-profile-link:hover .contact-arrow-icon{stroke:var(--accent);transform:translate(2px,-2px)}
+
+/* Location & Status */
+.contact-location{display:flex;align-items:center;justify-content:center;gap:0.55rem;color:var(--text-secondary);font-size:0.85rem;font-weight:500;margin:2rem auto 0;text-align:center}
+.contact-status-dot{width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 0 4px rgba(16,185,129,0.18);flex-shrink:0;display:inline-block;animation:contactPulseDot 2.5s infinite}
+@keyframes contactPulseDot{
+  0%,100%{box-shadow:0 0 0 4px rgba(16,185,129,0.18)}
+  50%{box-shadow:0 0 0 7px rgba(16,185,129,0.06)}
+}
+
+/* Mobile Responsiveness */
+@media(max-width:768px){
+  .contact-cards-grid{grid-template-columns:1fr;gap:1.25rem;max-width:520px;margin:0 auto}
+  .contact-card{padding:1.6rem 1.4rem;border-radius:18px}
+  .contact-card h3{font-size:1.15rem;margin-bottom:1rem}
+  .contact-card-email h3{margin-bottom:0.75rem}
+  .contact-email-stack{gap:1rem}
+  .contact-location{margin-top:1.5rem;font-size:0.82rem}
+}
+@media(max-width:480px){
+  .contact-card{padding:1.35rem 1.15rem;border-radius:16px}
+  .contact-profile-link{padding:0.65rem 0.85rem;gap:0.75rem;min-height:58px}
+  .contact-email-address{font-size:0.88rem}
+  .btn-contact-email{width:100%;min-height:40px}
+}
+@media(prefers-reduced-motion:reduce){
+  .contact-card,.contact-profile-link,.btn-contact-email,.contact-arrow-icon{transition:none}
+  .contact-card:hover,.contact-profile-link:hover,.btn-contact-email:hover{transform:none}
+  .contact-status-dot{animation:none}
 }
 
 /* Experience Section Redesign */
@@ -659,50 +700,47 @@
     <div class="contact-single">
       <div class="text-center" style="max-width:600px;margin:0 auto 3rem">
         <span class="eyebrow">Contact</span>
-        <h2>Let&apos;s connect.</h2>
+        <h2>Let&apos;s connect<span style="color:var(--accent)">.</span></h2>
         <p style="color:var(--text-secondary);margin-top:0.75rem">Feel free to reach out for work, questions, or just to connect.</p>
       </div>
 
-      <div class="contact-details-row">
-        <div class="contact-detail">
-          <div class="contact-detail-icon contact-icon-email">&#9993;</div>
-          <div class="contact-detail-text">
-            <h4>Email</h4>
-            <a href="mailto:yahyaqureshi012@gmail.com">yahyaqureshi012@gmail.com</a>
+      <div class="contact-cards-grid">
+        <article class="contact-card contact-card-email">
+          <h3>Email</h3>
+          <div class="contact-email-stack">
+            <a class="contact-email-address" href="mailto:yahyaqureshi012@gmail.com">yahyaqureshi012@gmail.com</a>
+            <a class="btn-contact-email" href="mailto:yahyaqureshi012@gmail.com">Send email</a>
           </div>
-        </div>
+        </article>
 
-        <div class="contact-detail">
-          <div class="contact-detail-icon contact-icon-location">&#128205;</div>
-          <div class="contact-detail-text">
-            <h4>Location</h4>
-            <span>Pakistan &middot; Available Worldwide</span>
-          </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon contact-icon-time">&#128338;</div>
-          <div class="contact-detail-text">
-            <h4>Response Time</h4>
-            <span>Within 24 hours</span>
-          </div>
-        </div>
+        <article class="contact-card contact-card-profiles">
+          <h3>Profiles</h3>
+          <nav class="contact-profiles-list" aria-label="Social profiles">
+            <a class="contact-profile-link" href="https://www.linkedin.com/in/yahya-kq" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)">
+              <span class="contact-brand-icon contact-brand-linkedin" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.048c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </span>
+              <span class="contact-link-copy">
+                <span class="contact-link-label">LinkedIn</span>
+                <span class="contact-link-detail">Let&apos;s connect professionally</span>
+              </span>
+              <svg class="contact-arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+            <a class="contact-profile-link" href="https://github.com/yahya-kq" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)">
+              <span class="contact-brand-icon contact-brand-github" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </span>
+              <span class="contact-link-copy">
+                <span class="contact-link-label">GitHub</span>
+                <span class="contact-link-detail">Code &amp; projects</span>
+              </span>
+              <svg class="contact-arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </nav>
+        </article>
       </div>
 
-      <div class="social-row" style="justify-content:center;margin-top:2.5rem">
-        <a href="https://www.linkedin.com/in/yahya-kq" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.048c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://github.com/yahya-kq" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#181717"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        </a>
-        <a href="https://www.fiverr.com/yahya_qureshii?public_mode=true" target="_blank" rel="noopener" title="Fiverr" aria-label="Fiverr">
-          <svg width="24" height="24" viewBox="0 0 192 192">
-            <circle cx="96" cy="96" r="96" fill="#1DBF73"/>
-            <path fill="#ffffff" d="M50 71h14c0-17.5 9.5-33.5 33-33.5h16v21h-14.5c-8.5 0-14.5 4.5-14.5 12.5H137v75h-24V91H88v55H64V91H50z"/>
-          </svg>
-        </a>
-      </div>
+      <p class="contact-location"><span class="contact-status-dot" aria-hidden="true"></span><span>Pakistan &middot; Available Worldwide</span></p>
     </div>
   </div>
 </section>
