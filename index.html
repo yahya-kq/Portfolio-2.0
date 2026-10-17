@@ -147,8 +147,7 @@
 .contact-card-email{justify-content:center;background:linear-gradient(140deg,#ffffff 55%,#f4f9f9 100%)}
 .contact-card-email h3{margin-bottom:0.9rem}
 .contact-email-stack{display:flex;flex-direction:column;align-items:flex-start;gap:1.15rem}
-.contact-email-address{display:inline-flex;align-items:center;font-size:0.95rem;font-weight:400;color:var(--text);text-decoration:none;overflow-wrap:anywhere;word-break:break-word;transition:color .2s ease}
-.contact-email-address:hover{color:var(--accent);text-decoration:none}
+.contact-email-address{display:inline-flex;align-items:center;font-size:0.95rem;font-weight:400;color:var(--text);overflow-wrap:anywhere;word-break:break-word;user-select:all;cursor:text}
 .btn-contact-email{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;border-radius:10px;background:var(--accent);color:#ffffff !important;min-height:38px;padding:0.55rem 1.15rem;font-size:0.85rem;font-weight:600;text-decoration:none;box-shadow:0 4px 14px rgba(13,115,119,0.22);transition:background .2s cubic-bezier(0.4,0,0.2,1),transform .2s cubic-bezier(0.4,0,0.2,1),box-shadow .2s cubic-bezier(0.4,0,0.2,1);border:none;cursor:pointer}
 .btn-contact-email:hover{background:#0a5e61;color:#ffffff !important;transform:translateY(-2px);box-shadow:0 8px 22px rgba(13,115,119,0.32)}
 .btn-contact-email:active{transform:translateY(0)}
@@ -708,7 +707,7 @@
         <article class="contact-card contact-card-email">
           <h3>Email</h3>
           <div class="contact-email-stack">
-            <a class="contact-email-address" href="mailto:yahyaqureshi012@gmail.com">yahyaqureshi012@gmail.com</a>
+            <span class="contact-email-address">yahyaqureshi012@gmail.com</span>
             <a class="btn-contact-email" href="mailto:yahyaqureshi012@gmail.com">Send email</a>
           </div>
         </article>
@@ -1459,9 +1458,16 @@ if (isReload) {
   }
   window.scrollTo(0, 0);
 }
-
-window.addEventListener('beforeunload', () => {
-  window.scrollTo(0, 0);
+// Preserve scroll position when clicking mailto links so the page does not jump
+document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+  link.addEventListener('click', () => {
+    const savedY = window.scrollY;
+    requestAnimationFrame(() => {
+      if (window.scrollY !== savedY) {
+        window.scrollTo(0, savedY);
+      }
+    });
+  });
 });
 
 // Initialize title, deep link category, and scroll position
